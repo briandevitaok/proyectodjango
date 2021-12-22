@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%  block breadcrumb   %}
+{% include "orden/snippets/breadcrumb.html"%}
+{% endblock %}
+
+{%  block content %}
+
+<div>
+    <h2>Detalles del pedido</h2>
+</div>
+<div class="col-8">
+<div class="card">
+    <div class="card-body">
+      {% for product in cart.products.all%}
+      {% include 'orden/snippets/product.html'%}
+      {% endfor %}
+    </div>
+    </div>
+  </div>
+
+
+  <div class="col">
+    {% url 'direccion' as next_url %}
+   {% include 'orden/snippets/detalles.html' with next_url=next_url %}
+  </div>
+
+{% endblock %}

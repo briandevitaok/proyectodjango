@@ -1,0 +1,43 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block content %}
+<div class="col">
+    <div class="h3">
+        Metodo de pago
+    </div>
+
+    <form id="payment-form">
+    <div class="form-group">
+      <h4 class="mb-3">Payment</h4>
+      <label for="card-element">Credito o debito</label>
+      <div id="card-element" class="form-control" style="height:2.4em; padding-top:.7em;">
+        <!-- Payment elements will appear here -->
+      </div>
+    </div>
+      <hr class="my-4">
+      <button id="submit" class="btn btn-primary " data-secret="{{ client_secret }}">Pay</button>
+    </form>
+    
+    <script>
+      var STRIPE_PUBLIC_KEY = 'pk_test_51JLZPVKAa6sxJ3x8z99uY3X9VqzBs36mKJLuuOL21X41jP0yp30Anw2Q4lIbAFGhLWSfd7Wyfu3Aov6gHV8HiHwx00YNf8cfcC'
+      var CSRF_TOKEN = '{{ csrf_token }}';
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'js/index.js' %}" data-rel-js></script>
+    
+    
+
+
+
+
+
+      {%endblock %}
+
+      
+
+
+
+
+
+

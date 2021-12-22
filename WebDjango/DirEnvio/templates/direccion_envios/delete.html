@@ -1,0 +1,19 @@
+{% extends "base.html" %}  
+
+{%  block content %}
+<div class="col">
+    <form method="post">
+        {% csrf_token %}
+        <div class="h4">
+            ¿Estas seguro que deseas eliminar la direccion?
+
+        </div>
+        <input type="submit" class="btn btn-danger" value="Eliminar">
+        <a class="btn btn-danger" href="{% url 'direccion_envio'%}">Cancelar</a>
+    </form>
+
+</div>
+
+
+
+{% endblock %}
